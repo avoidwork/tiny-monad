@@ -28,7 +28,7 @@
         </ul>
       </header>
       <section>
-        <p><strong>tiny-monad</strong> is a Monad factory to help get you started working with Monads. <code>Monad()</code> takes an optional <code>modifier</code> Function to run when instantiating instances, which receives <code>monad</code> &amp; <code>value</code> as it's parameters. What's a Monad? Well, it's this pattern that makes composing Functions / behaviors really easy, and it works well with Functional Reactive Programming for creating UIs, etc.. Calling <code>Monad.bind()</code> will return a new Monad for composition.</p>
+        <p><strong>tiny-monad</strong> is a Monad factory to help get you started working with Monads. <code>Monad()</code> takes an optional <code>modifier</code> Function to run when instantiating instances, which receives <code>monad</code> &amp; <code>value</code> as it's parameters. What's a Monad? Well, it's this pattern that makes composing Functions / behaviors really easy, and it works well with Functional Reactive Programming for creating UIs, etc..</p>
 
 <div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">AlertMonad</span> <span class="o">=</span> <span class="nx">Monad</span><span class="p">().</span><span class="nx">lift</span><span class="p">(</span><span class="s1">'alert'</span><span class="p">,</span> <span class="nx">alert</span><span class="p">),</span>
     <span class="nx">hello</span>      <span class="o">=</span> <span class="nx">AlertMonad</span><span class="p">(</span><span class="s1">'Hello!'</span><span class="p">),</span>
@@ -40,6 +40,8 @@
 
 <span class="nx">goodbye</span><span class="p">.</span><span class="nx">alert</span><span class="p">();</span>
 </pre></div>
+
+<p><a href="http://travis-ci.org/avoidwork/tiny-monad"><img src="https://secure.travis-ci.org/avoidwork/tiny-monad.png" alt="build status"></a></p>
 
 <h2>
 <a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
@@ -53,7 +55,7 @@
 <p>Binds a Function to the Monad and executes it</p>
 
 <pre><code>param  {Function} fn Function to bind
-return {Object}      New Monad for composition
+return {Object}      Result of Monad value &amp; fn
 </code></pre>
 
 <p><strong>Example</strong></p>
@@ -73,7 +75,7 @@ return {Object}      New Monad for composition
 
 <pre><code>param  {String} name Name of Function
 param  {String} fn   Function to 'lift'
-return {Object}      Monad
+return {Object}      Monad constructor
 </code></pre>
 
 <p><strong>Example</strong></p>
@@ -94,7 +96,7 @@ return {Object}      Monad
 
 <pre><code>param  {String} name Name of Function
 param  {String} fn   Function
-return {Object}      Monad
+return {Object}      Monad constructor
 </code></pre>
 
 <p><strong>Example</strong></p>
