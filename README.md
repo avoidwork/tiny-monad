@@ -1,6 +1,18 @@
 # tiny-monad
 
-**tiny-monad** is a Monad factory to help get you started working with Monads. `Monad()` takes an optional `modifier` Function to run when instantiating instances, which receives `monad` & `value` as it's parameters. What's a Monad? Well, it's this pattern that makes composing Functions / behaviors really easy, and it works well with Functional Reactive Programming for creating UIs, etc..
+**tiny-monad** is a Monad factory to help get you started working with Monads. `Monad()` takes an optional `modifier` Function to run when instantiating instances, which receives `monad` & `value` as it's parameters. What's a Monad? Well, it's this pattern that makes composing Functions / behaviors really easy, and it works well with Functional Reactive Programming for creating UIs, etc.. Calling `Monad.bind()` will return a new Monad for composition.
+
+```javascript
+var AlertMonad = Monad().lift('alert', alert),
+    hello      = AlertMonad('Hello!'),
+    goodbye    = AlertMonad('Goodbye!');
+
+hello.alert();
+
+...
+
+goodbye.alert();
+```
 
 [![build status](https://secure.travis-ci.org/avoidwork/tiny-monad.png)](http://travis-ci.org/avoidwork/tiny-monad)
 
@@ -11,7 +23,7 @@
 Binds a Function to the Monad and executes it
 
 	param  {Function} fn Function to bind
-	return {Object}      Monad
+	return {Object}      New Monad for composition
 
 **Example**
 
