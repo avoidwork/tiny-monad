@@ -1,0 +1,11 @@
+/doc/
+/node_modules/
+/lib/tiny-monad.min.js
+/lib/tiny-monad.map
+/test/
+/src/
+.git
+.gitignore
+.jshintrc
+.travis.yml
+Gruntfile.js
