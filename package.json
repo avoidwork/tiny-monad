@@ -1,7 +1,7 @@
 {
   "name": "tiny-monad",
   "description": "Tiny monad for Client or Server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/avoidwork/tiny-monad",
   "author": {
     "name": "Jason Mulligan",
